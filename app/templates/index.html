@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .book { border-bottom: 1px solid #ddd; padding: 10px; display: flex; align-items: center; }
+        .book img { width: 100px; height: auto; margin-right: 20px; }
+        .price { font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+    {% for book in books %}
+
+    <div class="book">
+        <img src=" {{ book.image_url }} " alt="Buchcover">
+        <div>
+            <h2>{{ book.title }}</h2>
+            <p><strong>Barcode:</strong> {{ book.upc }} </p>
+            <p><strong>Kategorie:</strong> {{ book.category }} </p>
+            <p class="price">{{ book.price }}</p>
+            <p>Verfügbarkeit: {{ book.availability }}</p>
+            <p><strong>Beschreibung:</strong> {{ book.description }} </p>
+        </div>           
+    </div>
+
+    {% endfor %}
+</body>
+</html>
